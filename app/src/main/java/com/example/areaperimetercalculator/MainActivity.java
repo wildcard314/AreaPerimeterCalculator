@@ -40,6 +40,12 @@ public class MainActivity extends AppCompatActivity
     ConstraintLayout cons_j_squareRectangleView;
     Spinner sp_j_shapes;
     TextView tv_j_areaPermiter;
+    // for circle ==============================================
+    EditText et_j_radius;
+    ConstraintLayout cons_j_Circle;
+    TextView tv_j_CircleComputedData;
+    //for triangle ============================================
+
 
     ArrayAdapter<String> spinneradapter;
 
@@ -59,6 +65,9 @@ public class MainActivity extends AppCompatActivity
         cons_j_squareRectangleView = findViewById(R.id.cont_v_squareRectable);
         sp_j_shapes = findViewById(R.id.sp_v_shapes);
         tv_j_areaPermiter = findViewById(R.id.tv_v_resultsSquare);
+        et_j_radius = findViewById(R.id.et_v_radius);
+        cons_j_Circle = findViewById(R.id.cont_v_circle);
+        tv_j_CircleComputedData = findViewById(R.id.tv_v_computedAreaCircle);
 
         //becasue we are makiing a simple dropdown menu (Spinner) that will only contain
         // strings as options. ew can use a string array with the built in array adapter
@@ -75,7 +84,7 @@ public class MainActivity extends AppCompatActivity
         setupSpinnerChangeListener();
 
         textchangeListenerSquareRect();
-
+        textChangeListenerRadius();
 
 
 
@@ -94,17 +103,20 @@ public class MainActivity extends AppCompatActivity
                     //square
                     cons_j_squareRectangleView.setVisibility(View.VISIBLE);
 
-
+                    hideConstraintView(cons_j_Circle);
                 }
                 else if (position == 1)
                 {
                     //rectangle
                     cons_j_squareRectangleView.setVisibility(View.VISIBLE);
 
+                    hideConstraintView(cons_j_Circle);
                 }
                 else if (position == 2)
                 {
                     //circle
+                    cons_j_Circle.setVisibility(View.VISIBLE);
+
 
                     hideConstraintView(cons_j_squareRectangleView);
                 }
@@ -168,6 +180,48 @@ public class MainActivity extends AppCompatActivity
         });
 
     }
+
+    public void textChangeListenerRadius()
+    {
+        et_j_radius.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                setAreaPerimeterCircle(et_j_radius.getText().toString());
+            }
+        });
+
+    }
+
+    public void setAreaPerimeterCircle(String radiusS)
+    {
+        if(radiusS.isEmpty())
+        {
+            return;
+        }
+        double radius = Double.parseDouble(radiusS);
+        double pi = Math.PI;
+
+        double area = pi = Math.pow(radius, 2);
+        double perimeter = 2 * pi * radius;
+
+        tv_j_CircleComputedData.setText("Area = " + area + "\nPerimeter = " + perimeter);
+
+
+    }
+
+
+
 
     public void setAreaAndPerimeterSquareRect(String lengthS, String widthS)
     {

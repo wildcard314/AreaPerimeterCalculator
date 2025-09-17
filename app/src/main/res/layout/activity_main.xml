@@ -8,12 +8,116 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cont_v_triangle"
+        android:layout_width="367dp"
+        android:layout_height="447dp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="267dp">
+
+        <EditText
+            android:id="@+id/et_v_sideB"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            tools:layout_editor_absoluteX="140dp"
+            tools:layout_editor_absoluteY="59dp"
+            tools:text="0" />
+
+        <EditText
+            android:id="@+id/et_v_sideC"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            tools:layout_editor_absoluteX="264dp"
+            tools:layout_editor_absoluteY="58dp"
+            tools:text="0" />
+
+        <EditText
+            android:id="@+id/et_v_sideA"
+            android:layout_width="90dp"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="58dp"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Side B"
+            tools:layout_editor_absoluteX="168dp"
+            tools:layout_editor_absoluteY="22dp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Side A"
+            tools:layout_editor_absoluteX="54dp"
+            tools:layout_editor_absoluteY="21dp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Side C"
+            tools:layout_editor_absoluteX="299dp"
+            tools:layout_editor_absoluteY="21dp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Base"
+            tools:layout_editor_absoluteX="170dp"
+            tools:layout_editor_absoluteY="128dp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="height"
+            tools:layout_editor_absoluteX="170dp"
+            tools:layout_editor_absoluteY="250dp" />
+
+        <EditText
+            android:id="@+id/et_v_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            tools:layout_editor_absoluteX="83dp"
+            tools:layout_editor_absoluteY="157dp" />
+
+        <EditText
+            android:id="@+id/et_v_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            tools:layout_editor_absoluteX="82dp"
+            tools:layout_editor_absoluteY="284dp" />
+
+        <TextView
+            android:id="@+id/tv_v_TriangleCalculations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            tools:layout_editor_absoluteX="156dp"
+            tools:layout_editor_absoluteY="399dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cont_v_circle"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,14 +196,14 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="225dp"
-        android:layout_height="56dp"
+        android:layout_height="0dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="142dp"
         android:text="Shape Area and Perimeter Calculator"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/cont_v_squareRectable"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -130,9 +234,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="19dp"
         android:layout_marginEnd="19dp"
-        android:layout_marginBottom="1dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">

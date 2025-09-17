@@ -45,6 +45,13 @@ public class MainActivity extends AppCompatActivity
     ConstraintLayout cons_j_Circle;
     TextView tv_j_CircleComputedData;
     //for triangle ============================================
+    EditText et_j_sideA;
+    EditText et_j_sideB;
+    EditText et_j_sideC;
+    EditText et_j_base;
+    EditText et_j_height;
+    TextView tv_j_triangleCalculations;
+    ConstraintLayout cont_j_Triangle;
 
 
     ArrayAdapter<String> spinneradapter;
@@ -68,6 +75,13 @@ public class MainActivity extends AppCompatActivity
         et_j_radius = findViewById(R.id.et_v_radius);
         cons_j_Circle = findViewById(R.id.cont_v_circle);
         tv_j_CircleComputedData = findViewById(R.id.tv_v_computedAreaCircle);
+        et_j_base = findViewById(R.id.et_v_base);
+        et_j_sideA = findViewById(R.id.et_v_sideA);
+        et_j_sideB = findViewById(R.id.et_v_sideB);
+        et_j_sideC = findViewById(R.id.et_v_sideC);
+        et_j_height = findViewById(R.id.et_v_height);
+        tv_j_triangleCalculations = findViewById(R.id.tv_v_TriangleCalculations);
+        cont_j_Triangle = findViewById(R.id.cont_v_triangle);
 
         //becasue we are makiing a simple dropdown menu (Spinner) that will only contain
         // strings as options. ew can use a string array with the built in array adapter
@@ -103,6 +117,7 @@ public class MainActivity extends AppCompatActivity
                     //square
                     cons_j_squareRectangleView.setVisibility(View.VISIBLE);
 
+                    hideConstraintView(cont_j_Triangle);
                     hideConstraintView(cons_j_Circle);
                 }
                 else if (position == 1)
@@ -110,6 +125,7 @@ public class MainActivity extends AppCompatActivity
                     //rectangle
                     cons_j_squareRectangleView.setVisibility(View.VISIBLE);
 
+                    hideConstraintView(cont_j_Triangle);
                     hideConstraintView(cons_j_Circle);
                 }
                 else if (position == 2)
@@ -117,13 +133,15 @@ public class MainActivity extends AppCompatActivity
                     //circle
                     cons_j_Circle.setVisibility(View.VISIBLE);
 
-
+                    hideConstraintView(cont_j_Triangle);
                     hideConstraintView(cons_j_squareRectangleView);
                 }
                 else if (position == 3)
                 {
                     //triangle
+                    cont_j_Triangle.setVisibility(View.VISIBLE);
 
+                    hideConstraintView(cons_j_Circle);
                     hideConstraintView(cons_j_squareRectangleView);
                 }
             }
@@ -200,6 +218,12 @@ public class MainActivity extends AppCompatActivity
                 setAreaPerimeterCircle(et_j_radius.getText().toString());
             }
         });
+
+    }
+
+    public void textChangeListenerTriangle()
+    {
+
 
     }
 
